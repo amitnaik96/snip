@@ -21,6 +21,7 @@ Snip is a clean, minimal, and modern URL shortener. It generates sleek, shortene
     # run  
     yarn dev
 ```
+Visit `http://localhost:3000`
 
 ## License
 Distributed under the [MIT](https://github.com/amitnaik96/snip/blob/master/LICENSE) License .
