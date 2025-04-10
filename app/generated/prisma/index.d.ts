@@ -1996,21 +1996,21 @@ export namespace Prisma {
   export type UrlMinAggregateOutputType = {
     id: string | null
     originalUrl: string | null
-    snipUrl: string | null
+    snip: string | null
     userId: string | null
   }
 
   export type UrlMaxAggregateOutputType = {
     id: string | null
     originalUrl: string | null
-    snipUrl: string | null
+    snip: string | null
     userId: string | null
   }
 
   export type UrlCountAggregateOutputType = {
     id: number
     originalUrl: number
-    snipUrl: number
+    snip: number
     userId: number
     _all: number
   }
@@ -2019,21 +2019,21 @@ export namespace Prisma {
   export type UrlMinAggregateInputType = {
     id?: true
     originalUrl?: true
-    snipUrl?: true
+    snip?: true
     userId?: true
   }
 
   export type UrlMaxAggregateInputType = {
     id?: true
     originalUrl?: true
-    snipUrl?: true
+    snip?: true
     userId?: true
   }
 
   export type UrlCountAggregateInputType = {
     id?: true
     originalUrl?: true
-    snipUrl?: true
+    snip?: true
     userId?: true
     _all?: true
   }
@@ -2113,7 +2113,7 @@ export namespace Prisma {
   export type UrlGroupByOutputType = {
     id: string
     originalUrl: string
-    snipUrl: string
+    snip: string
     userId: string | null
     _count: UrlCountAggregateOutputType | null
     _min: UrlMinAggregateOutputType | null
@@ -2137,7 +2137,7 @@ export namespace Prisma {
   export type UrlSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     originalUrl?: boolean
-    snipUrl?: boolean
+    snip?: boolean
     userId?: boolean
     user?: boolean | Url$userArgs<ExtArgs>
   }, ExtArgs["result"]["url"]>
@@ -2147,11 +2147,11 @@ export namespace Prisma {
   export type UrlSelectScalar = {
     id?: boolean
     originalUrl?: boolean
-    snipUrl?: boolean
+    snip?: boolean
     userId?: boolean
   }
 
-  export type UrlOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "originalUrl" | "snipUrl" | "userId", ExtArgs["result"]["url"]>
+  export type UrlOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "originalUrl" | "snip" | "userId", ExtArgs["result"]["url"]>
   export type UrlInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | Url$userArgs<ExtArgs>
   }
@@ -2164,7 +2164,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       originalUrl: string
-      snipUrl: string
+      snip: string
       userId: string | null
     }, ExtArgs["result"]["url"]>
     composites: {}
@@ -2561,7 +2561,7 @@ export namespace Prisma {
   interface UrlFieldRefs {
     readonly id: FieldRef<"Url", 'String'>
     readonly originalUrl: FieldRef<"Url", 'String'>
-    readonly snipUrl: FieldRef<"Url", 'String'>
+    readonly snip: FieldRef<"Url", 'String'>
     readonly userId: FieldRef<"Url", 'String'>
   }
     
@@ -2988,7 +2988,7 @@ export namespace Prisma {
   export const UrlScalarFieldEnum: {
     id: 'id',
     originalUrl: 'originalUrl',
-    snipUrl: 'snipUrl',
+    snip: 'snip',
     userId: 'userId'
   };
 
@@ -3138,7 +3138,7 @@ export namespace Prisma {
     NOT?: UrlWhereInput | UrlWhereInput[]
     id?: StringFilter<"Url"> | string
     originalUrl?: StringFilter<"Url"> | string
-    snipUrl?: StringFilter<"Url"> | string
+    snip?: StringFilter<"Url"> | string
     userId?: StringNullableFilter<"Url"> | string | null
     user?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
   }
@@ -3146,26 +3146,26 @@ export namespace Prisma {
   export type UrlOrderByWithRelationInput = {
     id?: SortOrder
     originalUrl?: SortOrder
-    snipUrl?: SortOrder
+    snip?: SortOrder
     userId?: SortOrder
     user?: UserOrderByWithRelationInput
   }
 
   export type UrlWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    snip?: string
     AND?: UrlWhereInput | UrlWhereInput[]
     OR?: UrlWhereInput[]
     NOT?: UrlWhereInput | UrlWhereInput[]
     originalUrl?: StringFilter<"Url"> | string
-    snipUrl?: StringFilter<"Url"> | string
     userId?: StringNullableFilter<"Url"> | string | null
     user?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
-  }, "id">
+  }, "id" | "snip">
 
   export type UrlOrderByWithAggregationInput = {
     id?: SortOrder
     originalUrl?: SortOrder
-    snipUrl?: SortOrder
+    snip?: SortOrder
     userId?: SortOrder
     _count?: UrlCountOrderByAggregateInput
     _max?: UrlMaxOrderByAggregateInput
@@ -3178,7 +3178,7 @@ export namespace Prisma {
     NOT?: UrlScalarWhereWithAggregatesInput | UrlScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Url"> | string
     originalUrl?: StringWithAggregatesFilter<"Url"> | string
-    snipUrl?: StringWithAggregatesFilter<"Url"> | string
+    snip?: StringWithAggregatesFilter<"Url"> | string
     userId?: StringNullableWithAggregatesFilter<"Url"> | string | null
   }
 
@@ -3241,44 +3241,44 @@ export namespace Prisma {
   export type UrlCreateInput = {
     id?: string
     originalUrl: string
-    snipUrl: string
+    snip: string
     user?: UserCreateNestedOneWithoutUrlsInput
   }
 
   export type UrlUncheckedCreateInput = {
     id?: string
     originalUrl: string
-    snipUrl: string
+    snip: string
     userId?: string | null
   }
 
   export type UrlUpdateInput = {
     originalUrl?: StringFieldUpdateOperationsInput | string
-    snipUrl?: StringFieldUpdateOperationsInput | string
+    snip?: StringFieldUpdateOperationsInput | string
     user?: UserUpdateOneWithoutUrlsNestedInput
   }
 
   export type UrlUncheckedUpdateInput = {
     originalUrl?: StringFieldUpdateOperationsInput | string
-    snipUrl?: StringFieldUpdateOperationsInput | string
+    snip?: StringFieldUpdateOperationsInput | string
     userId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UrlCreateManyInput = {
     id?: string
     originalUrl: string
-    snipUrl: string
+    snip: string
     userId?: string | null
   }
 
   export type UrlUpdateManyMutationInput = {
     originalUrl?: StringFieldUpdateOperationsInput | string
-    snipUrl?: StringFieldUpdateOperationsInput | string
+    snip?: StringFieldUpdateOperationsInput | string
   }
 
   export type UrlUncheckedUpdateManyInput = {
     originalUrl?: StringFieldUpdateOperationsInput | string
-    snipUrl?: StringFieldUpdateOperationsInput | string
+    snip?: StringFieldUpdateOperationsInput | string
     userId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -3433,21 +3433,21 @@ export namespace Prisma {
   export type UrlCountOrderByAggregateInput = {
     id?: SortOrder
     originalUrl?: SortOrder
-    snipUrl?: SortOrder
+    snip?: SortOrder
     userId?: SortOrder
   }
 
   export type UrlMaxOrderByAggregateInput = {
     id?: SortOrder
     originalUrl?: SortOrder
-    snipUrl?: SortOrder
+    snip?: SortOrder
     userId?: SortOrder
   }
 
   export type UrlMinOrderByAggregateInput = {
     id?: SortOrder
     originalUrl?: SortOrder
-    snipUrl?: SortOrder
+    snip?: SortOrder
     userId?: SortOrder
   }
 
@@ -3691,13 +3691,13 @@ export namespace Prisma {
   export type UrlCreateWithoutUserInput = {
     id?: string
     originalUrl: string
-    snipUrl: string
+    snip: string
   }
 
   export type UrlUncheckedCreateWithoutUserInput = {
     id?: string
     originalUrl: string
-    snipUrl: string
+    snip: string
   }
 
   export type UrlCreateOrConnectWithoutUserInput = {
@@ -3731,7 +3731,7 @@ export namespace Prisma {
     NOT?: UrlScalarWhereInput | UrlScalarWhereInput[]
     id?: StringFilter<"Url"> | string
     originalUrl?: StringFilter<"Url"> | string
-    snipUrl?: StringFilter<"Url"> | string
+    snip?: StringFilter<"Url"> | string
     userId?: StringNullableFilter<"Url"> | string | null
   }
 
@@ -3784,22 +3784,22 @@ export namespace Prisma {
   export type UrlCreateManyUserInput = {
     id?: string
     originalUrl: string
-    snipUrl: string
+    snip: string
   }
 
   export type UrlUpdateWithoutUserInput = {
     originalUrl?: StringFieldUpdateOperationsInput | string
-    snipUrl?: StringFieldUpdateOperationsInput | string
+    snip?: StringFieldUpdateOperationsInput | string
   }
 
   export type UrlUncheckedUpdateWithoutUserInput = {
     originalUrl?: StringFieldUpdateOperationsInput | string
-    snipUrl?: StringFieldUpdateOperationsInput | string
+    snip?: StringFieldUpdateOperationsInput | string
   }
 
   export type UrlUncheckedUpdateManyWithoutUserInput = {
     originalUrl?: StringFieldUpdateOperationsInput | string
-    snipUrl?: StringFieldUpdateOperationsInput | string
+    snip?: StringFieldUpdateOperationsInput | string
   }
 
 

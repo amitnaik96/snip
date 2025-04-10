@@ -121,7 +121,7 @@ exports.Prisma.UserScalarFieldEnum = {
 exports.Prisma.UrlScalarFieldEnum = {
   id: 'id',
   originalUrl: 'originalUrl',
-  snipUrl: 'snipUrl',
+  snip: 'snip',
   userId: 'userId'
 };
 

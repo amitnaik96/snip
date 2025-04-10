@@ -1,8 +1,8 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { nanoid } from 'nanoid';
 import z from 'zod'; 
-import prisma from '@/lib/prisma';
-import { UrlManager } from '@/lib/store'
+import prisma from '../../../lib/prisma';
+import { UrlManager } from '../../../lib/store'
 
 const bodySchema = z.object({
     url : z.string().url()
@@ -27,11 +27,11 @@ export const POST = async (req: NextRequest) => {
             const response = await prisma.url.create({
                 data: {
                     originalUrl: url as string,
-                    snipUrl: nanoid(6)
+                    snip: nanoid(6)
                 }
             });
 
-            snip = response.snipUrl;
+            snip = response.snip;
             r.setSnip(url, snip);
         } 
 
