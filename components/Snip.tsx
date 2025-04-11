@@ -1,11 +1,8 @@
 "use client"
 import { Copy } from 'lucide-react';
 import { useRouter } from 'next/navigation'
-import { useSetAtom } from 'jotai'
-import { originalUrlAtom } from '@/lib/atom'
 
 export const Snip = ({url, snip}: any) => {
-    const setOriginalUrl = useSetAtom(originalUrlAtom);
     const router = useRouter(); 
     const snipUrl = `${process.env.NEXT_PUBLIC_SNIP_DOMAIN}/${snip}`
 
@@ -14,7 +11,6 @@ export const Snip = ({url, snip}: any) => {
     };
 
     function navigate(){
-        setOriginalUrl(url);
         router.push(`/details/${snip}`);
     }
 

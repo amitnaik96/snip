@@ -8,6 +8,10 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+/* .dark .bg-grid {
+  background: #010017;
+  background: linear-gradient(90deg,rgba(1, 0, 23, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(0, 14, 26, 1) 100%);
+} */
 
 .font-caveat {
   font-family: "Caveat", sans-serif;
