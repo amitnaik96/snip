@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 
 export const Snip = ({url, snip}: any) => {
     const router = useRouter(); 
-    const snipUrl = `${process.env.SNIP_DOMAIN}/${snip}`
+    const snipUrl = `${process.env.NEXT_PUBLIC_SNIP_DOMAIN}/${snip}`
 
     const copyToClipboard = (text: string) => {
         navigator?.clipboard?.writeText(snipUrl);
