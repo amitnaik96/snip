@@ -10,8 +10,8 @@ export const Hero = () => {
     const [ url, setUrl ] = useState<string>('');
     const [snip, setSnip] = useState('');
     const [snips, setSnips] = useState<{url: string, snip: string}[]>([{
-        url: "https://veryhugeurl.com/users/profile/posts/A23BC",
-        snip: "urKLFo"
+        url: "https://github.com/amitnaik96/snip",
+        snip: "6RC0QE"
     }]);
 
     async function submit(){

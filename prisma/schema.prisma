@@ -13,9 +13,7 @@ model User {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   email String @unique
   password String 
-  clicks Int @default(0)
   createdAt DateTime @default(now())
-
   urls Url[]
 }
 
@@ -23,6 +21,7 @@ model Url {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   originalUrl String 
   snip String @unique
+  clicks Int @default(0)
 
   userId String?  @db.ObjectId
   user User? @relation(fields: [userId], references: [id])
