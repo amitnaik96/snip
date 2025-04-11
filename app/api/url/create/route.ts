@@ -36,7 +36,7 @@ export const POST = async (req: NextRequest) => {
         } 
 
         return NextResponse.json({
-            snipUrl: `${process.env.SNIP_DOMAIN}/${snip}`
+            snip
         });
     } catch (err) {
         return NextResponse.json({

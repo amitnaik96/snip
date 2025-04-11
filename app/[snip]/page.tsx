@@ -2,7 +2,7 @@ import { redirect} from 'next/navigation';
 import prisma from '../lib/prisma'
 
 const SnipRedirect = async ({params}: any) =>  {
-    const { snip } = params;
+    const { snip } = await params;
 
     const response = await prisma.url.findUnique({
         where : { snip }
