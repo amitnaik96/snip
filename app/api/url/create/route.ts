@@ -1,8 +1,8 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { nanoid } from 'nanoid';
 import z from 'zod'; 
-import prisma from '../../../lib/prisma';
-import { UrlManager } from '../../../lib/store'
+import prisma from '@/lib/prisma';
+import { UrlManager } from '@/lib/store'
 
 const bodySchema = z.object({
     url : z.string().url()

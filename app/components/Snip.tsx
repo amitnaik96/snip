@@ -1,8 +1,11 @@
 "use client"
 import { Copy } from 'lucide-react';
 import { useRouter } from 'next/navigation'
+import { useSetAtom } from 'jotai'
+import { originalUrlAtom } from '@/lib/atom'
 
 export const Snip = ({url, snip}: any) => {
+    const setOriginalUrl = useSetAtom(originalUrlAtom);
     const router = useRouter(); 
     const snipUrl = `${process.env.NEXT_PUBLIC_SNIP_DOMAIN}/${snip}`
 
@@ -10,7 +13,12 @@ export const Snip = ({url, snip}: any) => {
         navigator?.clipboard?.writeText(snipUrl);
     };
 
-    return <div onClick={() => router.push(`/analytics/${snip}`)} className="flex justify-center gap-3 border border-slate-400 rounded-lg p-2 w-80 sm:w-150 mb-3">
+    function navigate(){
+        setOriginalUrl(url);
+        router.push(`/details/${snip}`);
+    }
+
+    return <div onClick={navigate} className="flex justify-center gap-3 border border-slate-400 rounded-lg p-2 w-80 sm:w-150 mb-3">
         <div className="hidden sm:flex flex-col justify-center">{url.slice(0,25)}...</div>
         <div className="hidden sm:block">
             <img src="./right-arrow.svg" alt="" width="60" className="dark:hidden block"/>

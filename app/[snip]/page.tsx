@@ -1,5 +1,5 @@
 import { redirect} from 'next/navigation';
-import prisma from '../lib/prisma'
+import prisma from '../../lib/prisma'
 
 const SnipRedirect = async ({params}: any) =>  {
     const { snip } = await params;
