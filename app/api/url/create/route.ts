@@ -26,7 +26,7 @@ export const POST = async (req: NextRequest) => {
         if(!snip){
             const response = await prisma.url.create({
                 data: {
-                    originalUrl: url as string,
+                    originalUrl: url,
                     snip: nanoid(6)
                 }, 
                 select: {

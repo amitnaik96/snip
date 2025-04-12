@@ -23,7 +23,7 @@ export const Hero = () => {
         const newSnip = response.data.snip
         setSnip(newSnip);
 
-        setSnips(prev => [{ url, snip }, ...prev]);
+        setSnips(prev => [{ url, snip: newSnip }, ...prev]);
         toast('Get your snip at recent links');
     }
 
@@ -44,7 +44,7 @@ export const Hero = () => {
             </div>
             <div className="flex gap-2 w-80 sm:w-auto">
                 <Input onChange={e => setUrl(e.target.value)} placeholder="Enter your url..." className="border border-slate-300"/>
-                <Button onClick={submit} size="icon" className="px-3"><Scissors/></Button>
+                <Button onClick={() => submit()} size="icon" className="px-3"><Scissors/></Button>
             </div>
             <SnipList snips={snips}/>
         </div>
