@@ -8,7 +8,8 @@ Snip is a clean, minimal, and modern URL shortener. It generates sleek, shortene
 - **Click Tracking**
 - **QR Code Generation**
 
-### **Screenshot**
+## **Preview**
+![Snip Preview](https://raw.githubusercontent.com/amitnaik96/snip/master/public/snip.png)
 
 
 ## **Installation**
