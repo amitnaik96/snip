@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ClickChart } from '@/components/Chart';
 import Image from 'next/image';
+import { toast } from "sonner"
 
 const Details = () => {
     const { snip }  = useParams<{snip: string}>();
@@ -29,8 +30,9 @@ const Details = () => {
 
     }, [snip]);
 
-    const copyToClipboard = () => {
-        navigator?.clipboard?.writeText(originalUrl);
+    const copyToClipboard = (text: string) => {
+        navigator?.clipboard?.writeText(text);
+        toast('Copied url!');
     };
 
 
@@ -40,7 +42,7 @@ const Details = () => {
                 <div className="text-2xl font-bold mb-3">Link Details</div>
                 <div className="flex gap-3 pr-sm:2 w-80 sm:w-auto mb-5">
                     <div className="flex flex-col justify-center">{originalUrl.slice(0,25)}...</div>
-                    <button onClick={() => copyToClipboard}><Copy size={20}/></button>
+                    <button onClick={() => copyToClipboard(originalUrl)}><Copy size={20}/></button>
                     <div className="hidden sm:block">
                         <Image src="/right-arrow.svg" alt="" width="60" height={30} className="dark:hidden block"/>
                         <Image src="/white-rarrow.svg" alt="" width="60" height={30} className="dark:block hidden"/>
@@ -57,7 +59,7 @@ const Details = () => {
                             <div className="text-sm text-gray-500 mt-2 mb-3">Scan this QR code to access your shortened URL</div>
                             <div className="flex gap-2">
                                 <div className="flex flex-col justify-center text-[#0284c7]">{snipUrl}</div>
-                                <button onClick={() => copyToClipboard}><Copy size={20}/></button>
+                                <button onClick={() => copyToClipboard(snipUrl)}><Copy size={20}/></button>
                             </div>
                         </div>
                     </div>

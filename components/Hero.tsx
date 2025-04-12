@@ -6,6 +6,7 @@ import { SnipList } from './SnipList';
 import Image from 'next/image';
 import { useState } from 'react';
 import axios from 'axios';
+import { toast } from "sonner"
 
 export const Hero = () => {
     const [ url, setUrl ] = useState<string>('');
@@ -23,6 +24,7 @@ export const Hero = () => {
         setSnip(newSnip);
 
         setSnips(prev => [{ url, snip }, ...prev]);
+        toast('Get your snip at recent links');
     }
 
     return <div className="flex justify-center mt-20 sm:mt-35 mb-40">

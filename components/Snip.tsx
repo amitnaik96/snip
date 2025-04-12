@@ -7,10 +7,6 @@ export const Snip = ({url, snip}: any) => {
     const router = useRouter(); 
     const snipUrl = `${process.env.NEXT_PUBLIC_SNIP_DOMAIN}/${snip}`
 
-    const copyToClipboard = () => {
-        navigator?.clipboard?.writeText(snipUrl);
-    };
-
     function navigate(){
         router.push(`/details/${snip}`);
     }
@@ -22,6 +18,5 @@ export const Snip = ({url, snip}: any) => {
             <Image src="/white-rarrow.svg" alt="" width="60" height={30} className="dark:block hidden"/>
         </div>
         <div className="flex flex-col justify-center text-[#0284c7]">{snipUrl}</div>
-        <button onClick={() => copyToClipboard}><Copy size={20}/></button>
     </div>
 }
