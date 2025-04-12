@@ -10,7 +10,6 @@ import { toast } from "sonner"
 
 export const Hero = () => {
     const [ url, setUrl ] = useState<string>('');
-    const [snip, setSnip] = useState('');
     const [snips, setSnips] = useState<{url: string, snip: string}[]>([{
         url: "https://github.com/amitnaik96/snip",
         snip: "6RC0QE"
@@ -20,9 +19,8 @@ export const Hero = () => {
         const response = await axios.post('/api/url/create', {
             url 
         });
+        
         const newSnip = response.data.snip
-        setSnip(newSnip);
-
         setSnips(prev => [{ url, snip: newSnip }, ...prev]);
         toast('Get your snip at recent links');
     }
