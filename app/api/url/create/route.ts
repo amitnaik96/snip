@@ -28,11 +28,15 @@ export const POST = async (req: NextRequest) => {
                 data: {
                     originalUrl: url as string,
                     snip: nanoid(6)
+                }, 
+                select: {
+                    snip: true
                 }
             });
 
             snip = response.snip;
-            r.setSnip(url, snip);
+            // console.log(snip);
+            r.setSnip(url, snip || "");
         } 
 
         return NextResponse.json({
