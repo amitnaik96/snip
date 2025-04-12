@@ -33,8 +33,8 @@ export const Hero = () => {
                     <div className="font-caveat text-slate-700 hidden sm:block dark:text-gray-400">https://veryhugeurl.com/users/profile/posts/A23BC</div>
                     <div className="font-caveat text-slate-700 block sm:hidden dark:text-gray-400">https://veryhugeurl.com/users/profile</div>
                     <div className="flex justify-center">
-                        <Image src="/arrow.svg" alt="" width="70" className="text-slate-600 block dark:hidden"/>
-                        <Image src="/white-arrow.svg" alt="" width="70" className="text-slate-600 hidden dark:block"/>
+                        <Image src="/arrow.svg" alt="" width="70" height={30} className="text-slate-600 block dark:hidden"/>
+                        <Image src="/white-arrow.svg" alt="" width="70" height={30} className="text-slate-600 hidden dark:block"/>
 
                     </div>
                     <div className="ml-10 sm:ml-60 font-caveat mb-5 text-[#0284c7]">https://snip.realamit.xyz/urKLFo</div>

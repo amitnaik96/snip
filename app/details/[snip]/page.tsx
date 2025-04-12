@@ -42,8 +42,8 @@ const Details = () => {
                     <div className="flex flex-col justify-center">{originalUrl.slice(0,25)}...</div>
                     <button onClick={() => copyToClipboard}><Copy size={20}/></button>
                     <div className="hidden sm:block">
-                        <Image src="/right-arrow.svg" alt="" width="60" className="dark:hidden block"/>
-                        <Image src="/white-rarrow.svg" alt="" width="60" className="dark:block hidden"/>
+                        <Image src="/right-arrow.svg" alt="" width="60" height={30} className="dark:hidden block"/>
+                        <Image src="/white-rarrow.svg" alt="" width="60" height={30} className="dark:block hidden"/>
                     </div>
                     <div className="hidden sm:flex flex-col justify-center text-[#0284c7]">{snipUrl}</div>
                 </div>

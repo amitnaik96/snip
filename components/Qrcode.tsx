@@ -15,6 +15,6 @@ export const Qrcode = ({snip} : {snip: string}) => {
     }, [snip]);
 
     return <div className="">
-        <Image src={qrcode} alt="" width="200" className="rounded-lg"/>
+        <Image src={qrcode} alt="" width="200" height={30} className="rounded-lg"/>
     </div>
 }
