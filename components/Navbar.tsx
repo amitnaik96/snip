@@ -4,7 +4,6 @@ import { Github } from 'lucide-react';
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from './Toggle';
 import { useRouter } from 'next/navigation';
-import { toast } from "sonner"
 
 export const Navbar = () => {
     const router = useRouter();

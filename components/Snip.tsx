@@ -18,5 +18,6 @@ export const Snip = ({url, snip}: any) => {
             <Image src="/white-rarrow.svg" alt="" width="60" height={30} className="dark:block hidden"/>
         </div>
         <div className="flex flex-col justify-center text-[#0284c7]">{snipUrl}</div>
+        <button><Copy size={20}/></button>
     </div>
 }
