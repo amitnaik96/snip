@@ -3,6 +3,14 @@ Snip is a clean, minimal, and modern URL shortener. It generates sleek, shortene
 
 **This project is under active development. Features may change.**
 
+## Features
+- **URL Shortening**
+- **Click Tracking**
+- **QR Code Generation**
+
+### **Screenshot**
+
+
 ## **Installation**
 ### **Local**
 ```bash
