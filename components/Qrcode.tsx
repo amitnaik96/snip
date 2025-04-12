@@ -1,6 +1,7 @@
 "use client"
 import QRCode from 'qrcode';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export const Qrcode = ({snip} : {snip: string}) => {
     const [qrcode, setQrcode] = useState<string>("");
@@ -14,6 +15,6 @@ export const Qrcode = ({snip} : {snip: string}) => {
     }, [snip]);
 
     return <div className="">
-        <img src={qrcode} alt="" width="200" className="rounded-lg"/>
+        <Image src={qrcode} alt="" width="200" className="rounded-lg"/>
     </div>
 }

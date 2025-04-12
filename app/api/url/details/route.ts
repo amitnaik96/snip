@@ -1,5 +1,4 @@
-import { NextResponse, NextRequest } from 'next/server';
-import z from 'zod'; 
+import { NextResponse, NextRequest } from 'next/server'
 import prisma from '@/lib/prisma';
 
 export const GET = async (req: NextRequest) => {
